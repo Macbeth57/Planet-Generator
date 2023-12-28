@@ -50,7 +50,7 @@ namespace PlanetGenerator
             Brush brush = new SolidBrush(GetRandomColor());
             g.FillEllipse(brush, centerX, centerY, randomSize, randomSize);
 
-            cratersGenerator(g);
+            moonGenerator(g);
         }
 
         private Color GetRandomColor()
@@ -68,21 +68,21 @@ namespace PlanetGenerator
         }
 
 
-        private void cratersGenerator(Graphics g)
+        private void moonGenerator(Graphics g)
         {
-            int cratersNbr = random.Next(1, 14);
-            int craterSize = default;
-            int craterXPosition = default;
-            int craterYPosition = default;
+            int moonNbr = random.Next(1, 14);
+            int moonSize = default;
+            int moonXPosition = default;
+            int moonYPosition = default;
 
-            for (int i = 0; i < cratersNbr; i++)
+            for (int i = 0; i < moonNbr; i++)
             {
-                craterSize = random.Next(3, 21);
-                craterXPosition = random.Next(0, 600);
-                craterYPosition = random.Next(0, 600);
+                moonSize = random.Next(3, 21);
+                moonXPosition = random.Next(0, 600);
+                moonYPosition = random.Next(0, 600);
 
                 Brush smallCircleBrush = new SolidBrush(GetRandomColor());
-                g.FillEllipse(smallCircleBrush, craterXPosition, craterYPosition, craterSize, craterSize);
+                g.FillEllipse(smallCircleBrush, moonXPosition, moonYPosition, moonSize, moonSize);
             }
         }
         private void planetGenerator()
